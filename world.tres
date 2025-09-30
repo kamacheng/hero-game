@@ -1,7 +1,8 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://crpilwa15hijq"]
+[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://crpilwa15hijq"]
 
 [ext_resource type="Texture2D" uid="uid://ctlxcsk4alxx0" path="res://Asset/Tree-Assets.png" id="1_mu5wb"]
 [ext_resource type="PackedScene" uid="uid://b268u5uxxjrh1" path="res://player.tscn" id="2_uahtx"]
+[ext_resource type="PackedScene" uid="uid://by643gaej7a6" path="res://Enemies/boar.tscn" id="3_uahtx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fj7yv"]
 texture = ExtResource("1_mu5wb")
@@ -344,6 +345,7 @@ texture = ExtResource("1_mu5wb")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_tlwt5"]
 scenes/1/scene = ExtResource("2_uahtx")
+scenes/2/scene = ExtResource("3_uahtx")
 
 [resource]
 physics_layer_0/collision_layer = 1
