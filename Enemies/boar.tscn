@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://by643gaej7a6"]
+[gd_scene load_steps=16 format=3 uid="uid://by643gaej7a6"]
 
 [ext_resource type="PackedScene" uid="uid://b1o3dm41342ip" path="res://Enemies/enemy.tscn" id="1_a486u"]
 [ext_resource type="Texture2D" uid="uid://c436w8n3btfaj" path="res://Asset/Mob/Boar/Hit-Vanish/Hit-Sheet-White.png" id="2_u1gh7"]
@@ -6,6 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://pfcxs4kudk8k" path="res://Asset/Mob/Boar/Idle/Idle-Sheet-White.png" id="3_v7njy"]
 [ext_resource type="Texture2D" uid="uid://b4rf7ukijs230" path="res://Asset/Mob/Boar/Run/Run-Sheet-White.png" id="4_b384h"]
 [ext_resource type="Texture2D" uid="uid://b5oeld3ow6vgo" path="res://Asset/Mob/Boar/Walk/Walk-Base-Sheet-White.png" id="5_cokdy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7njy"]
+size = Vector2(40.25, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b384h"]
+size = Vector2(29, 30)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u1gh7"]
 
@@ -320,7 +326,7 @@ region_rect = Rect2(0, 0, 192, 32)
 [node name="WallChecker" type="RayCast2D" parent="Graphics" index="1"]
 position = Vector2(-11, -12)
 rotation = 1.5707964
-target_position = Vector2(7.1525574e-07, 18)
+target_position = Vector2(0, 10.999999)
 
 [node name="FloorChecker" type="RayCast2D" parent="Graphics" index="2"]
 position = Vector2(-15, -7)
@@ -331,6 +337,16 @@ position = Vector2(-14, -17)
 rotation = -4.712389
 target_position = Vector2(-1.9073486e-06, 95)
 collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Graphics/Hitbox" index="0"]
+position = Vector2(-2.125, -15)
+shape = SubResource("RectangleShape2D_v7njy")
+debug_color = Color(0.99112004, 0, 0.23984218, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Graphics/Hurtbox" index="0"]
+position = Vector2(-3.5, -15)
+shape = SubResource("RectangleShape2D_b384h")
+debug_color = Color(0.20221907, 0.6411615, 1.92523e-07, 0.41960785)
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(-2, -12)
@@ -344,5 +360,5 @@ libraries = {
 autoplay = "idle"
 
 [node name="ClamDownTimer" type="Timer" parent="." index="4"]
-wait_time = 2.5
+wait_time = 3.0
 one_shot = true
